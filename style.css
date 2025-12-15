@@ -1,0 +1,86 @@
+/* 1. Reset margin agar halaman menempel ke ujung layar */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Mengganti font standar */
+  background-color: #f4f4f4; /* Warna latar abu-abu muda */
+  color: #333; /* Warna teks abu-abu tua (tidak hitam pekat agar mata nyaman) */
+  text-align: center; /* Membuat semua teks rata tengah */
+}
+
+/* 2. Menghias Header */
+header {
+  background-color: #2c3e50; /* Biru gelap */
+  color: white;
+  padding: 20px; /* Memberi jarak nafas di dalam kotak */
+}
+
+/* 3. Menghias Judul Utama */
+h1 {
+  color: #e67e22; /* Warna Oranye */
+  font-size: 2.5rem; /* Ukuran font lebih besar */
+}
+
+/* Update bagian ul */
+ul {
+  list-style: none;
+  padding: 0;
+
+  /* BARU: Mengaktifkan Flexbox */
+  display: flex;
+
+  /* BARU: Mengatur posisi anak agar di tengah */
+  justify-content: center;
+
+  /* BARU: Jika layar sempit, izinkan item turun ke baris baru (Responsif) */
+  flex-wrap: wrap;
+
+  /* BARU: Jarak antar item */
+  gap: 20px;
+}
+
+/* Update bagian li */
+li {
+  background-color: white;
+  /* HAPUS margin: 10px auto; karena jarak sudah diatur oleh 'gap' di ul */
+  padding: 20px; /* Sedikit diperbesar biar lega */
+  width: 200px;
+  border-radius: 8px; /* Sudut lebih melengkung */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  /* BARU: Efek transisi halus saat disentuh */
+  transition: transform 0.3s ease;
+}
+
+/* BARU: Tambahan interaksi (Hover Effect) */
+li:hover {
+  transform: translateY(-5px); /* Naik sedikit saat cursor diarahkan */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Bayangan makin tebal */
+  border-bottom: 3px solid #e67e22; /* Garis oranye di bawah */
+}
+
+/* 5. Footer */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* --- DARK MODE STYLES --- */
+/* Kelas ini akan ditambahkan/dihapus oleh JS nanti */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+/* Mengubah warna header saat dark mode */
+body.dark-mode header {
+  background-color: #000;
+}
+
+/* Mengubah warna kartu skill agar tidak silau */
+body.dark-mode li {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
