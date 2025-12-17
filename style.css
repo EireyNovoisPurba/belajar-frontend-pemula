@@ -84,3 +84,9 @@ body.dark-mode li {
   color: #fff;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
 }
+
+/* Tambahan untuk Dark Mode Quote Box */
+body.dark-mode #quote-box {
+  background-color: #333;
+  color: #fff;
+}

@@ -14,4 +14,30 @@ themeBtn.addEventListener("click", function () {
   } else {
     themeBtn.innerText = "🌙 Mode Gelap";
   }
+
+  // --- FITUR API FETCH ---
+  async function getQuote() {
+    // 1. Tangkap elemen HTML
+    const textElement = document.getElementById("quote-text");
+    const authorElement = document.getElementById("quote-author");
+
+    try {
+      // 2. Panggil API (Request)
+      const response = await fetch("https://dummyjson.com/quotes/random");
+
+      // 3. Ubah jawaban server (JSON) menjadi Object JS
+      const data = await response.json();
+
+      // 4. Tampilkan ke layar
+      textElement.innerText = `"${data.quote}"`;
+      authorElement.innerText = `- ${data.author}`;
+    } catch (error) {
+      // 5. Penanganan Error (jika internet mati / server down)
+      textElement.innerText = "Gagal mengambil kutipan. Cek koneksi internet.";
+      console.error("Error fetching quote:", error);
+    }
+  }
+
+  // Jalankan fungsi saat halaman selesai dimuat
+  getQuote();
 });
